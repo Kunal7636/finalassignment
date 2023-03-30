@@ -93,4 +93,8 @@ This test case checks that a wrestler's wins and losses can be updated and that 
 Verify that the owner of a wrestler can transfer ownership to another address
 This test case checks that the owner of a wrestler can transfer ownership to another address and that the ownership is correctly updated in the contract. It can include checks such as verifying that the ownership transfer was successful and that the new owner is returned correctly.
 
+# Conclusion
+##### Wrestling Card Game on Blockchain is a simple yet innovative use of blockchain technology to create a competitive and interactive game experience. By utilizing the ERC-721 standard for non-fungible tokens, the contract allows users to mint and trade unique wrestlers with different strengths and win/loss records. The battle contract enables players to initiate battles and potentially win their opponents' wrestlers as prizes. The contract owner can update wrestler stats and set prize amounts, while access control ensures that only valid battles can be created. Overall, this game demonstrates the potential of blockchain technology to create new and engaging forms of entertainment.
+
+
 
