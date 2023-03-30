@@ -42,3 +42,55 @@ setPrize(uint256 prizeAmount): This function is used by the contract owner to se
 #### The contract uses the ERC721 standard for non-fungible tokens and OpenZeppelin's Ownable contract for access control. The contract has a state variable state of type GameState that represents the current state of the game. The possible states are IDLE, PLAYING, and FINISHED. The contract owner can start the game by calling the startGame function, which sets the state to PLAYING.
 
 Unique feature of this contract is that it allows players to battle their wrestlers against each other, creating a competitive and interactive game experience. The contract also ensures that only valid battles can be created, as each wrestler can only be owned by one player and players cannot battle their own wrestlers. Additionally, the contract implements access control to ensure that only the contract owner can start the game and resolve battles.
+
+#TEST CASES
+
+The following test cases are included:
+
+Verify the ability to mint a new wrestler and increase the wrestler count
+This test case verifies that the mint function can be used to mint a new wrestler and increase the total wrestler count. It also checks that the new wrestler has the correct name, strength, wins, and losses.
+
+Verify that non-owners cannot mint wrestlers
+This test case verifies that non-owners cannot call the mint function to mint new wrestlers. It checks that the total wrestler count remains at 0.
+
+Verify the ability to update the strength of an existing wrestler
+This test case verifies that the updateStrength function can be used to update the strength of an existing wrestler. It also checks that the wrestler's other attributes remain unchanged.
+
+Verify that non-owners cannot update wrestler strength
+This test case verifies that non-owners cannot call the updateStrength function to update wrestler strength. It checks that the wrestler's strength remains unchanged.
+
+Verify that an error is thrown if the wrestler does not exist
+This test case verifies that an error is thrown if the updateStrength function is called with an index that does not correspond to an existing wrestler. It checks that the wrestler count remains at 0.
+
+### Battles
+##### Verify the ability to create a new battle
+This test case checks that a new battle can be created with valid parameters and that it is correctly recorded in the contract. It can include checks such as verifying the battle ID, wrestler indices, and player addresses.
+
+Verify the ability to resolve a battle with a winner
+This test case verifies that a battle can be resolved with a winner and that the ownership of the wrestlers involved in the battle is correctly updated. It can include checks such as verifying the winner and loser of the battle and the updated ownership of the wrestlers.
+
+Verify that a battle cannot be created with an invalid wrestler index
+This test case checks that attempting to create a battle with an invalid wrestler index results in an error. It can include checks such as verifying that the correct error message is returned.
+
+Verify that a battle cannot be created with the same player
+This test case checks that attempting to create a battle with the same player results in an error. It can include checks such as verifying that the correct error message is returned.
+
+Verify that an already resolved battle cannot be resolved again
+This test case checks that attempting to resolve an already resolved battle results in an error. It can include checks such as verifying that the correct error message is returned.
+
+Verify the ability to mint a new wrestler and increase the wrestler count
+This test case verifies that the mint function can be used to mint a new wrestler and increase the total wrestler count. It can include checks such as verifying that the new wrestler has the correct name, strength, wins, and losses.
+
+Verify that a wrestler's name can be updated
+This test case checks that a wrestler's name can be updated and that the updated name is correctly recorded in the contract. It can include checks such as verifying that the updated name is returned correctly.
+
+Verify that a wrestler's strength can be updated
+This test case checks that a wrestler's strength can be updated and that the updated strength is correctly recorded in the contract. It can include checks such as verifying that the updated strength is returned correctly.
+
+Verify that a wrestler's wins and losses can be updated
+This test case checks that a wrestler's wins and losses can be updated and that the updated values are correctly recorded in the contract. It can include checks such as verifying that the updated values are returned correctly.
+
+Verify that the owner of a wrestler can transfer ownership to another address
+This test case checks that the owner of a wrestler can transfer ownership to another address and that the ownership is correctly updated in the contract. It can include checks such as verifying that the ownership transfer was successful and that the new owner is returned correctly.
+
+
